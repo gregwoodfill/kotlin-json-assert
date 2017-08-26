@@ -6,11 +6,11 @@ class AssertionsSpec {
 
     @Test
     fun `json equals other with additional fields`() {
-        val underTest = """{"firstName": "Bob", "lastName":"Smith"}""" // has additional fields
+        val underTest = """{"firstName": "Bob", "lastName":"Smith"}"""
         val expected = """{ "firstName": "Bob" }"""
 
-        underTest.whenJson() shouldEqual expected
-
+        underTest shouldEqualJson expected
+        underTest `should equal json` expected
     }
 
     @Test
@@ -18,8 +18,8 @@ class AssertionsSpec {
         val underTest = """{"firstName": "Bob" }"""
         val expected = """{ "firstName": "Bob" }"""
 
-        underTest.whenJson() shouldEqual expected
-
+        underTest shouldEqualJson expected
+        underTest `should equal json` expected
     }
 
     @Test
@@ -27,7 +27,8 @@ class AssertionsSpec {
         val underTest = """{"firstName": "Bob" }"""
         val expected = """{ "firstName": "Bob" }"""
 
-        underTest.whenJson() shouldStrictlyEqual expected
+        underTest shouldStrictlyEqualJson expected
+        underTest `should strictly equal json` expected
     }
 
 
@@ -36,7 +37,8 @@ class AssertionsSpec {
         val underTest = """{"firstName": "Bob", "lastName": "Smith" }"""
         val expected = """{ "firstName": "Bob" }"""
 
-        underTest.whenJson() shouldNotStrictlyEqual expected
+        underTest shouldNotStrictlyEqualJson expected
+        underTest `should not strictly equal json` expected
     }
 
     @Test
@@ -44,7 +46,8 @@ class AssertionsSpec {
         val underTest = """{"firstName": "BobZ" }"""
         val expected = """{ "firstName": "Bob" }"""
 
-        underTest.whenJson() shouldNotEqual expected
+        underTest shouldNotEqualJson expected
+        underTest `should not equal json` expected
     }
 
     @Test
@@ -52,6 +55,7 @@ class AssertionsSpec {
         val underTest = """{"firstNameZ": "Bob" }"""
         val expected = """{ "firstName": "Bob" }"""
 
-        underTest.whenJson() shouldNotEqual expected
+        underTest shouldNotEqualJson expected
+        underTest `should not equal json` expected
     }
 }

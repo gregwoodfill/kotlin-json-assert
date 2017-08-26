@@ -2,14 +2,7 @@ package com.gregwoodfill.assert
 
 import org.skyscreamer.jsonassert.JSONAssert
 
-class JsonRep(val strValue: String)
 
-/**
- * Convert String to dummy object that gives us a way to fluently provide assertEquals on json.
- *
- * "{}".whenJson() shouldEqual "{ }"
- */
-fun String.whenJson(): JsonRep = JsonRep(strValue = this)
 
 /**
  * Assert that JSON is equal to another JSON without strict checking
@@ -17,16 +10,16 @@ fun String.whenJson(): JsonRep = JsonRep(strValue = this)
  *
  * @see JSONAssert.assertEquals(String, String, Boolean)
  */
-infix fun JsonRep.shouldEqual(expected:String) = JSONAssert.assertEquals(expected, this.strValue, false)
-infix fun JsonRep.`should equal`(expected:String) = shouldEqual(expected)
+infix fun String.shouldEqualJson(expected:String) = JSONAssert.assertEquals(expected, this, false)
+infix fun String.`should equal json`(expected:String) = shouldEqualJson(expected)
 
 /**
  * Assert that JSON is equal to another JSON with strict checking
  *
  * @see JSONAssert.assertEquals(String, String, Boolean)
  */
-infix fun JsonRep.shouldStrictlyEqual(expected:String) = JSONAssert.assertEquals(expected, this.strValue, true)
-infix fun JsonRep.`should strictly equal`(expected:String) = shouldStrictlyEqual(expected)
+infix fun String.shouldStrictlyEqualJson(expected:String) = JSONAssert.assertEquals(expected, this, true)
+infix fun String.`should strictly equal json`(expected:String) = shouldStrictlyEqualJson(expected)
 
 
 /**
@@ -34,8 +27,8 @@ infix fun JsonRep.`should strictly equal`(expected:String) = shouldStrictlyEqual
  *
  * @see JSONAssert.assertNotEquals(String, String, Boolean)
  */
-infix fun JsonRep.shouldNotStrictlyEqual(expected:String) = JSONAssert.assertNotEquals(expected, this.strValue, true)
-infix fun JsonRep.`should not strictly equal`(expected:String) = shouldNotStrictlyEqual(expected)
+infix fun String.shouldNotStrictlyEqualJson(expected:String) = JSONAssert.assertNotEquals(expected, this, true)
+infix fun String.`should not strictly equal json`(expected:String) = shouldNotStrictlyEqualJson(expected)
 
 
 /**
@@ -43,5 +36,5 @@ infix fun JsonRep.`should not strictly equal`(expected:String) = shouldNotStrict
  *
  * @see JSONAssert.assertNotEquals(String, String, Boolean)
  */
-infix fun JsonRep.shouldNotEqual(expected:String) = JSONAssert.assertNotEquals(expected, this.strValue, false)
-infix fun JsonRep.`should not equal`(expected:String) = shouldNotEqual(expected)
+infix fun String.shouldNotEqualJson(expected:String) = JSONAssert.assertNotEquals(expected, this, false)
+infix fun String.`should not equal json`(expected:String) = shouldNotEqualJson(expected)
