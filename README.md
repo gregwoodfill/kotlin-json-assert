@@ -8,7 +8,7 @@ Kotlin wrapper of [JSONAssert](https://github.com/skyscreamer/JSONassert)
 // strict checking is off by default
  """{"firstName": "Bob", "lastName":"Smith"}""" `should equal json` """{ "firstName": "Bob" }"""
  """{"firstName": "Bob", "lastName":"Smith"}""" shouldEqualJson """{ "firstName": "Bob" }"""
-"{}" shouldNotEqual """{"firstName":"Bob"}"""
+"{}" shouldNotEqualJson """{"firstName":"Bob"}"""
 "{}" `should not equal json` """{"firstName":"Bob"}"""
 
 // strict checking can be applied with `should strictly equal`
