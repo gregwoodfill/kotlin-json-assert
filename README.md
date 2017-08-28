@@ -15,7 +15,7 @@ Kotlin wrapper of [JSONAssert](https://github.com/skyscreamer/JSONassert)
 """{"firstName": "Bob"}""" `should strictly equal json` """{ "firstName": "Bob" }"""
 """{"firstName": "Bob"}""" shouldStrictlyEqualJson """{ "firstName": "Bob" }"""
 
-// inverse operations are availble with:
+// inverse operations are available with:
 `should not equal json`
 shouldNotEqualJson
 `should not strictly equal json`
