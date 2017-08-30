@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/gregwoodfill/kotlin-json-assert.svg?branch=master)](https://travis-ci.org/gregwoodfill/kotlin-json-assert)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 # kotlin-json-assert
 [Kluent](https://github.com/MarkusAmshove/Kluent) style assertions for JSON
 
