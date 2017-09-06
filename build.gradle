@@ -3,14 +3,13 @@ plugins {
     id 'idea'
     id 'maven'
     id 'maven-publish'
-    id "org.jetbrains.kotlin.jvm" version "1.1.4-2"
+    id "org.jetbrains.kotlin.jvm" version "1.1.4-3"
     id "com.jfrog.bintray" version "1.7.3"
 }
 
 group 'com.gregwoodfill.assert'
 version '0.1.0'
 
-ext.kotlin_version = '1.1.+'
 ext.jsonassert_version = '1.5.+'
 
 
@@ -36,8 +35,8 @@ repositories {
 
 dependencies {
     compile "org.skyscreamer:jsonassert:$jsonassert_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib"
+    compile "org.jetbrains.kotlin:kotlin-reflect"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'org.amshove.kluent:kluent:1.+'

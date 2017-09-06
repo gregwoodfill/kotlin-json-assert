@@ -3,6 +3,21 @@
 
 Kotlin wrapper of [JSONAssert](https://github.com/skyscreamer/JSONassert)
 
+## Getting Started
+build.gradle
+```groovy
+compile("com.gregwoodfill.assert:kotlin-json-assert:0.1.0")
+```
+
+maven.xml
+```xml
+<dependency>
+  <groupId>com.gregwoodfill.assert</groupId>
+  <artifactId>kotlin-json-assert</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
 ## Usage
 ```kotlin
 // strict checking is off by default
