@@ -12,6 +12,9 @@ version '0.1.0'
 
 ext.jsonassert_version = '1.5.+'
 
+task wrapper(type: Wrapper) {
+    version = "4.1"
+}
 
 bintray {
     user = System.getenv('BINTRAY_USER')
